@@ -3,7 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/apigateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/clients/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exceptionhandler/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/httpclient/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/offer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scheduler/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />

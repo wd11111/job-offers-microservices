@@ -2,8 +2,8 @@ package com.wd.offer.service;
 
 import com.google.common.base.Strings;
 import com.wd.clients.offer.OfferDto;
-import com.wd.offer.exception.OfferDuplicateException;
-import com.wd.offer.exception.OfferNotFoundException;
+import com.wd.exceptionhandler.exception.OfferDuplicateException;
+import com.wd.exceptionhandler.exception.OfferNotFoundException;
 import com.wd.offer.model.Offer;
 import com.wd.offer.repository.OfferRepository;
 import com.wd.offer.util.OfferMapper;
@@ -31,6 +31,7 @@ public class OfferService {
     @Cacheable(value = "offers")
     public List<OfferDto> findAll(int page, String field, String sortDir) {
         Pageable pageable = getPageable(page, field, sortDir);
+
         return offerRepository.findAll(pageable).stream()
                 .map(OfferMapper::mapToOfferDto)
                 .collect(Collectors.toList());
@@ -45,6 +46,7 @@ public class OfferService {
     @CacheEvict(value = "offers", allEntries = true)
     public List<OfferDto> saveListOfOffers(List<OfferDto> offers) {
         List<OfferDto> filteredOffers = filterOffers(offers);
+
         offerRepository.saveAll(mapToListOfOffers(filteredOffers));
         return filteredOffers;
     }
@@ -52,6 +54,7 @@ public class OfferService {
     @CacheEvict(value = "offers", allEntries = true)
     public OfferDto saveOffer(OfferDto offerDto) {
         Offer offerToInsert = mapToOffer(offerDto);
+
         try {
             offerRepository.save(offerToInsert);
             return offerDto;

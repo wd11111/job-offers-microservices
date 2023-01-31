@@ -11,8 +11,10 @@
         <module name="scheduler" />
         <module name="apigateway" />
         <module name="clients" />
-        <module name="eureka-server" />
+        <module name="exceptionhandler" />
+        <module name="eureka" />
         <module name="user" />
+        <module name="httpclient" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,7 +22,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="apigateway" options="-parameters" />
       <module name="clients" options="-parameters" />
-      <module name="eureka-server" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="exceptionhandler" options="-parameters" />
+      <module name="httpclient" options="-parameters" />
       <module name="job-offers-microservices" options="" />
       <module name="offer" options="-parameters" />
       <module name="scheduler" options="-parameters" />

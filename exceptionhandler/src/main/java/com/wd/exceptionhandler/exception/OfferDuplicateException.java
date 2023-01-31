@@ -1,4 +1,4 @@
-package com.wd.offer.exception;
+package com.wd.exceptionhandler.exception;
 
 public class OfferDuplicateException extends RuntimeException{
 

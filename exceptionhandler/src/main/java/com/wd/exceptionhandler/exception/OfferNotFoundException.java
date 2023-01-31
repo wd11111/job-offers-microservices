@@ -1,4 +1,4 @@
-package com.wd.offer.exception;
+package com.wd.exceptionhandler.exception;
 
 public class OfferNotFoundException extends RuntimeException{
 
