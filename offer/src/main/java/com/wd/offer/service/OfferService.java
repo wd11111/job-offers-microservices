@@ -1,10 +1,10 @@
 package com.wd.offer.service;
 
 import com.google.common.base.Strings;
+import com.wd.clients.offer.OfferDto;
 import com.wd.offer.exception.OfferDuplicateException;
 import com.wd.offer.exception.OfferNotFoundException;
 import com.wd.offer.model.Offer;
-import com.wd.offer.model.OfferDto;
 import com.wd.offer.repository.OfferRepository;
 import com.wd.offer.util.OfferMapper;
 import lombok.RequiredArgsConstructor;

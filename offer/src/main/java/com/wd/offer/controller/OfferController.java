@@ -1,6 +1,6 @@
 package com.wd.offer.controller;
 
-import com.wd.offer.model.OfferDto;
+import com.wd.clients.offer.OfferDto;
 import com.wd.offer.service.OfferService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/offers")
+@RequestMapping("api/v1/offers")
 @RequiredArgsConstructor
 public class OfferController {
 

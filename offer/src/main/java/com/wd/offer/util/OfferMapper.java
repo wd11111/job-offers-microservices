@@ -1,8 +1,8 @@
 package com.wd.offer.util;
 
 
+import com.wd.clients.offer.OfferDto;
 import com.wd.offer.model.Offer;
-import com.wd.offer.model.OfferDto;
 
 import java.util.List;
 import java.util.stream.Collectors;

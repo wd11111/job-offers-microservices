@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="offer" />
         <module name="scheduler" />
+        <module name="clients" />
         <module name="eureka-server" />
         <module name="user" />
       </profile>
@@ -16,6 +17,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="clients" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="job-offers-microservices" options="" />
       <module name="offer" options="-parameters" />
