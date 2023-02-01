@@ -1,6 +1,6 @@
 package com.wd.offer.config;
 
-import com.wd.exceptionhandler.handler.ExceptionHandler;
+import com.wd.exceptionhandler.handler.Handler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class Config {
 
     @Bean
-    public ExceptionHandler exceptionHandler() {
-        return new ExceptionHandler();
+    public Handler exceptionHandler() {
+        return new Handler();
     }
 }
