@@ -15,14 +15,14 @@ import java.time.Duration;
 public class OfferClientConfig {
 
     @Bean
-    RestTemplateResponseErrorHandler restTemplateResponseErrorHandler() {
+    protected RestTemplateResponseErrorHandler restTemplateResponseErrorHandler() {
         return new RestTemplateResponseErrorHandler();
     }
 
     @Bean
-    RestTemplate restTemplate(@Value("${offer.http.client.config.connectionTimeout}") long connectionTimeout,
-                              @Value("${offer.http.client.config.readTimeout}") long readTimeout,
-                              RestTemplateResponseErrorHandler errorHandler) {
+    protected RestTemplate restTemplate(@Value("${offer.http.client.config.connectionTimeout}") long connectionTimeout,
+                                        @Value("${offer.http.client.config.readTimeout}") long readTimeout,
+                                        RestTemplateResponseErrorHandler errorHandler) {
         return new RestTemplateBuilder()
                 .errorHandler(errorHandler)
                 .setConnectTimeout(Duration.ofMillis(connectionTimeout))
@@ -31,10 +31,10 @@ public class OfferClientConfig {
     }
 
     @Bean
-    RemoteOfferClient offerClient(RestTemplate restTemplate,
-                                  @Value("${offer.http.client.config.host}") String host,
-                                  @Value("${offer.http.client.config.port}") int port,
-                                  @Value("${offer.http.client.config.path}") String path) {
+    protected RemoteOfferClient offerClient(RestTemplate restTemplate,
+                                            @Value("${offer.http.client.config.host}") String host,
+                                            @Value("${offer.http.client.config.port}") int port,
+                                            @Value("${offer.http.client.config.path}") String path) {
         return new OfferHttpClient(restTemplate, host, port, path);
     }
 
