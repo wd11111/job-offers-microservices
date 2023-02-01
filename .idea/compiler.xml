@@ -13,10 +13,12 @@
         <module name="clients" />
         <module name="exceptionhandler" />
         <module name="eureka" />
-        <module name="user" />
         <module name="httpclient" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="user" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
