@@ -3,14 +3,15 @@ package com.wd.offer.containertest;
 import com.wd.clients.offer.OfferDto;
 import com.wd.exceptionhandler.exception.OfferDuplicateException;
 import com.wd.exceptionhandler.exception.OfferNotFoundException;
+import com.wd.offer.OfferApplication;
 import com.wd.offer.Samples;
 import com.wd.offer.model.Offer;
 import com.wd.offer.repository.OfferRepository;
 import com.wd.offer.service.OfferService;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -28,7 +29,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.BDDAssertions.then;
 
-@SpringBootTest
+@SpringBootTest(classes = OfferServiceWithContainerTests.TestConfig.class)
 @ActiveProfiles("container")
 @Testcontainers
 class OfferServiceWithContainerTests implements Samples {
@@ -87,4 +88,9 @@ class OfferServiceWithContainerTests implements Samples {
         assertThatThrownBy(() -> offerService.saveOffer(offerToAdd)).isInstanceOf(OfferDuplicateException.class)
                 .hasMessageContaining("Offer with this url already exists");
     }
+
+    @Import(OfferApplication.class)
+    static class TestConfig {
+    }
+
 }
